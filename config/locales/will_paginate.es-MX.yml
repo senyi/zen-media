@@ -1,0 +1,16 @@
+es-MX:
+  will_paginate:
+    previous_label: "&#8592; Anterior"
+    next_label: "Siguiente &#8594;"
+    page_gap: "..."
+    page_entries_info:
+      single_page:
+        zero:  "%{model} no encontrado"
+        one:   "Mostrando 1 %{model}"
+        other: "Mostrando los %{count} %{model} encontrados"
+      single_page_html:
+        zero:  "No se encontraron registros"
+        one:   "Mostrando <b>1</b> registro"
+        other: "Mostrando los&nbsp;<b>%{count}</b> registros encontrados"
+      multi_page: "Mostrando %{model} %{from} - %{to} de %{count} en total"
+      multi_page_html: "Mostrando <b>%{from}&nbsp;-&nbsp;%{to}</b> de <b>%{count}</b> registros en total"
