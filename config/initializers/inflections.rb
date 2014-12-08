@@ -12,6 +12,10 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.singular(/s$/, '')
   inflect.singular(/es$/, '')
 
+  inflect.irregular('nivel', 'niveles')
+  inflect.irregular('landing', 'landings')
+  inflect.irregular('campus', 'campuses')
+
   inflect.irregular('image', 'images')
   inflect.irregular('gallery', 'galleries')
   inflect.irregular('meme', 'memes')

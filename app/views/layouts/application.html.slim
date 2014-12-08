@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    title Senyire
+    meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    meta name="description" content="Sitio oficial de Senyire"
+    meta content="rails, ruby, web, design, develop" name="keywords"
+    meta name="author" content="senyib, jdsampayo"
+    /! HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /[if lt IE 9]
+      = javascript_include_tag "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js", "https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"
+    = csrf_meta_tags
+    link href="http://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet" type="text/css" /
+    link href="http://fonts.googleapis.com/css?family=Raleway:400,900,800,700,100,200,300,500,600" rel="stylesheet" type="text/css" /
+    link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" /
+    link href="http://fonts.googleapis.com/css?family=Cabin:400,600,700,400italic,600italic,700italic" rel="stylesheet" type="text/css" /
+
+  body
+    .container
+      - flash.each do |name, msg|
+        = content_tag :div, :class => "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable" do
+          button.close type="button" data-dismiss="alert" aria-hidden="true"
+            | &times;
+          = msg
+
+    .iS-Loading
+      .iS-Loadingbox
+        .loader Loading...
+    a.interLink href="#home"
+    .Q-Back.Q-animate.Q-animate-hide
+      i.fa.fa-caret-up.Q-Back-Icon
+      p TOP
+
+    = yield
+
+    footer
+      /![if IE 9] <div class="iS-IE9"></div>
