@@ -7,24 +7,24 @@
   .row.text-center.Q-margin20
     .col-md-8.col-md-offset-2.Q-uppercase
       h3.Q-margin40.Q-title
-        | ¿Tienes alguna duda o comentario? 
+        | ¿Tienes alguna duda o comentario?
         span.Q-colored Solo Contactános
       /!
         |p.Q-margin10 Nulla eu justo commodo lectus faucibus porttitor. Nullam iaculis, ipsum id euismod accumsan, eu elementum nunc nibh a justo.
   #Q-form.row.Q-margin40
-    .col-md-4.col-md-offset-2
-      form role="form"
+
+    =form_tag "/tableros/sendmail", method: "post"
+      .col-md-4.col-md-offset-2
         .form-group.Q-animate.Q-animate-left.Q-sequence-slow
-          input#Q-form-name.form-control data-content="Missing" data-placement="left" data-toggle="popover" data-trigger="manual" placeholder=("Nombre") type="text" /
+          input#Q-form-name.form-control data-content="Missing" data-placement="left" data-toggle="popover" data-trigger="manual" placeholder=("Nombre") type="text" name="nombre" required="" /
         .form-group.Q-animate.Q-animate-left.Q-sequence-slow
-          input#Q-form-email.form-control data-content="Missing" data-placement="left" data-toggle="popover" data-trigger="manual" placeholder=("Correo electrónico") type="email" /
+          input#Q-form-email.form-control data-content="Missing" data-placement="left" data-toggle="popover" data-trigger="manual" placeholder=("Correo electrónico") type="email" name="email" required="" /
         .form-group.Q-animate.Q-animate-left.Q-sequence-slow
-          input#Q-form-subject.form-control data-content="Missing" data-placement="left" data-toggle="popover" data-trigger="manual" placeholder="Título" type="text" /
-    .col-md-4
-      form role="form"
+          input#Q-form-subject.form-control data-content="Missing" data-placement="left" data-toggle="popover" data-trigger="manual" placeholder="Título" type="text" name="titulo" /
+      .col-md-4
         .form-group.Q-animate.Q-animate-right.Q-sequence-slow
-          textarea#Q-form-message.form-control.Q-message data-content="Missing" data-placement="right" data-toggle="popover" data-trigger="manual" placeholder="Mensaje" rows="3"
-        #Q-form-send.btn.btn-default.center-block.Q-submit.Q-animate-slow.Q-animate-right.Q-sequence-slow Enviar
+          textarea#Q-form-message.form-control.Q-message data-content="Missing" data-placement="right" data-toggle="popover" data-trigger="manual" placeholder="Mensaje" rows="3" name="mensaje" required=""
+        input#Q-form-send.btn.btn-default.center-block.Q-submit.Q-animate-slow.Q-animate-right.Q-sequence-slow type="submit" value="Enviar"
         #submit.modal.fade.bs-example-modal-sm aria-hidden="true" role="dialog" tabindex="-1"
           .modal-dialog
             .modal-content

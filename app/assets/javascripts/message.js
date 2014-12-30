@@ -11,7 +11,7 @@ $(document).ready(function(){
 		var formemailvalue = $.trim(formemail.val());
 		var formsubjectvalue = $.trim(formsubject.val());
 		var formmessagevalue = $.trim(formmessage.val());
-		/*OPTIONAL CONTROLS*/		
+		/*OPTIONAL CONTROLS*/
 		var formerror = false;
 		/*
 		if(formnamevalue == '') {
@@ -48,7 +48,7 @@ $(document).ready(function(){
 			setTimeout(function(){
 				/*AJAX FUNCTIONS: CHECK THE SEND.PHP FILE*/
 				/*
-				$.ajax({	
+				$.ajax({
 					type: "POST",
 					url: "send.php",
 					data: formdata,
@@ -65,7 +65,7 @@ $(document).ready(function(){
 				});
 				*/
 				/*DEMO OUTPUT: REMOVE WHEN AJAX IS ACTIVE*/
-				var newhtml = 'This is a demo version of the ajax contact form <br> You can activate it purchasing the template'
+				var newhtml = 'Su mensaje se ha enviado, exitosamente'
 				messageOutput(newhtml);
 			},1000);
 		}

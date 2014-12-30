@@ -34,4 +34,20 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+   # Do not compress assets
+  config.assets.compress = false
+
+  # Expands the lines which load the assets
+  config.assets.debug = true
+
+  ActionMailer::Base.smtp_settings = {
+    :address              => "smtp.zenmedia.mx",
+    :port                 => 587,
+    :domain               => "zenmedia.mx",
+    :user_name            => "contacto.zmedia@gmail.com",
+    :password             => "zenmedia.-*",
+    :authentication       => "login",
+    :enable_starttls_auto => true
+  }
+  config.action_mailer.default_url_options = { host: "http://localhost:3001" }
 end
