@@ -1,0 +1,33 @@
+nav#Q-menu.navbar.navbar-default role="navigation"
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"
+        span.sr-only Activar navegación
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand.interLink href="#home"
+        =image_tag "zenmedia.png", style: "height:100%;"
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li
+          a.interLink href="#about"  ¿Quiénes somos?
+        li
+          a.interLink href="#team"  Nuestro equipo
+        li
+          a.interLink href="#services"  Servicios
+        li
+          a.interLink href="#portfolio"  ¿Qué hacemos?
+        li
+          a.interLink href="#contact"  Contacto
+
+      ul.nav.navbar-nav.navbar-right
+        li
+          a href="#"
+            i.fa.fa-facebook
+        li
+          a href="#"
+            i.fa.fa-twitter
+        li
+          a href="#"
+            i.fa.fa-google-plus
