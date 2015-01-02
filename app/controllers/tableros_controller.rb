@@ -3,8 +3,12 @@ class TablerosController < ApplicationController
   end
 
   def sendmail
-    puts "parametro params[:nombre] "
     ContactoMailer.contacto( params[:nombre], params[:email], params[:titulo], params[:mensaje]).deliver
-    redirect_to "#contact", notice: 'Mensaje enviado correctamente.'
+
+    respond_to do |format|
+      format.html { redirect_to("/#contact", notice: 'Mensaje enviado correctamente.')
+ }
+      format.js
+    end
   end
 end
