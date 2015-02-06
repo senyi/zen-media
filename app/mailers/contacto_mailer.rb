@@ -1,10 +1,7 @@
 class ContactoMailer < ActionMailer::Base
 
-  def contacto(nombre, correo, titulo, mensaje)
-    @mensaje = mensaje
-    @nombre = nombre
-    @correo = correo
-    @titulo = titulo
-    mail to: "contacto.zmedia@gmail.com", subject: "Contacto a zen media", from: correo
+  def contacto(contacto)
+    @contacto = contacto
+    mail to: "contacto.zmedia@gmail.com", subject: "Contacto a Zen Media", from: "contacto.zmedia@gmail.com"
   end
 end

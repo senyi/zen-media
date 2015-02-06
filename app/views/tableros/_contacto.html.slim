@@ -13,22 +13,24 @@
         p.Q-margin10 Estamos para servirte.
   #Q-form.row.Q-margin40
 
-    =form_tag "/tableros/sendmail", method: "post", remote: true
+    =form_for @contacto, method: "post", remote: true do |f|
+      #error_messages
       .col-md-4.col-md-offset-2
         .form-group.Q-animate.Q-animate-left.Q-sequence-slow
-          input#Q-form-name.form-control data-content="Missing" data-placement="left" data-toggle="popover" data-trigger="manual" placeholder=("Nombre") type="text" name="nombre" required="" /
+          =f.text_field :nombre, id: "Q-form-name", class: "form-control", placeholder: "Nombre", required: true
         .form-group.Q-animate.Q-animate-left.Q-sequence-slow
-          input#Q-form-email.form-control data-content="Missing" data-placement="left" data-toggle="popover" data-trigger="manual" placeholder=("Correo electrónico") type="email" name="email" required="" /
+          =f.text_field :email, id: "Q-form-email", class: "form-control", placeholder: "Correo electrónico", required: true
         .form-group.Q-animate.Q-animate-left.Q-sequence-slow
-          input#Q-form-subject.form-control data-content="Missing" data-placement="left" data-toggle="popover" data-trigger="manual" placeholder="Título" type="text" name="titulo" /
+          =f.text_field :titulo, id: "Q-form-subject", class: "form-control", placeholder: "Título", required: true
       .col-md-4
         .form-group.Q-animate.Q-animate-right.Q-sequence-slow
-          textarea#Q-form-message.form-control.Q-message data-content="Missing" data-placement="right" data-toggle="popover" data-trigger="manual" placeholder="Mensaje" rows="3" name="mensaje" required=""
+          =f.text_area :mensaje, id: "Q-form-message", class: "form-control", placeholder: "Mensaje", required: true
         input#Q-form-send.btn.btn-default.center-block.Q-submit.Q-animate-slow.Q-animate-right.Q-sequence-slow type="submit" value="Enviar"
         #submit.modal.fade.bs-example-modal-sm aria-hidden="true" role="dialog" tabindex="-1"
           .modal-dialog
             .modal-content
               .modal-body
+                p Tu mensaje ha sido enviado correctamente.
               .modal-footer
                 button.btn.btn-default data-dismiss="modal" type="button"  Ok
 .Q-footer.Q-margin60

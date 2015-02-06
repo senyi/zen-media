@@ -1,14 +1,10 @@
 class TablerosController < ApplicationController
+
   def index
+    @experiencia = Time.diff(Time.new('2007-01-01'), Time.now)[:year]
+    @vacaciones = @experiencia * 14
+
+    @contacto = Contacto.new
   end
 
-  def sendmail
-    ContactoMailer.contacto( params[:nombre], params[:email], params[:titulo], params[:mensaje]).deliver
-
-    respond_to do |format|
-      format.html { redirect_to("/#contact", notice: 'Mensaje enviado correctamente.')
- }
-      format.js
-    end
-  end
 end

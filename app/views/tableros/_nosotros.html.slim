@@ -58,28 +58,16 @@
 .Q-grey-bg.Q-margin60
   .container
     .row
-      .col-md-3.text-center.Q-animate-slow.Q-animate-bottom.Q-sequence
+      .col-md-6.text-center.Q-animate-slow.Q-animate-bottom.Q-sequence
         .Q-number.Q-title
-          span.Q-colored.numberRoll data-number="7"  7
+          span.Q-colored.numberRoll data-number="#{@experiencia}"=@experiencia
         h3.Q-title Años de Experiencia
         p.Q-margin10 Innovando y creciendo profesionalmente.
-      .col-md-3.text-center.Q-animate-slow.Q-animate-bottom.Q-sequence
+      .col-md-6.text-center.Q-animate-slow.Q-animate-bottom.Q-sequence
         .Q-number.Q-title
-          span.Q-colored.numberRoll data-number="4"  4
-          span.numberRoll data-number="62"  62
-        h3.Q-title Tazas de Café y Té
-        p.Q-margin10 Delicioso y recién hecho.
-      .col-md-3.text-center.Q-animate-slow.Q-animate-bottom.Q-sequence
-        .Q-number.Q-title
-          span.Q-colored.numberRoll data-number="1"  1
-          span.numberRoll data-number="6715"  6715
-        h3.Q-title Horas en Oficina
-        p.Q-margin10 Dedicados al trabajo.
-      .col-md-3.text-center.Q-animate-slow.Q-animate-bottom.Q-sequence
-        .Q-number.Q-title
-          span.Q-colored.numberRoll data-number="1"  1
-          span.numberRoll data-number="54"  54
-        h3.Q-title Días de Viaje
+          span.Q-colored.numberRoll data-number="#{@vacaciones.to_s[0]}"=@vacaciones.to_s[0]
+          span.numberRoll data-number="#{@vacaciones.to_s[1..-1]}"=@vacaciones.to_s[1..-1]
+        h3.Q-title Días de Vacaciones
         p.Q-margin10 Por que la vida es un balance.
 .Q-parallax1.Q-parallax-content
   .Q-background
