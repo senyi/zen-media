@@ -62,4 +62,4 @@ Icon c
 # Archivos temporales de gedit o vim
 *~
 
-config/database.yml
+/config/database.yml
